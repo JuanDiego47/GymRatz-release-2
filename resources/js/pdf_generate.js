@@ -5,3 +5,11 @@ function pdf() {
     doc.text(20, 30, 'Texto 2');
     doc.save('Test.pdf');
 }
+
+var botonPDF = document.getElementById('generarPDF');
+
+// Agregar el manejador de eventos onclick
+botonPDF.onclick = function() {
+    
+    pdf();// Llamar a la función para generar el PDF
+};
