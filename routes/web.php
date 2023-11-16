@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\AdminsController;
 
+use App\Http\Controllers\AdminsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\MembersController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,7 @@ Route::get('/', function () {
 });
 
 
+
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
@@ -33,7 +36,6 @@ Route::middleware(['admin'])->group(function () {
     #Route::get('member', MembersController::class);
     #Route::get('disciplines', DisciplineController::class);
 
-    // Puedes agregar más rutas que requieran el mismo middleware aquí
 });
 
 Route::middleware(['coach'])->group(function () {
@@ -41,9 +43,6 @@ Route::middleware(['coach'])->group(function () {
     #Route::get('member', [MembersController::class, 'index']);
     #Route::get('disciplines', DisciplineController::class);
 
-    // Puedes agregar más rutas que requieran el mismo middleware aquí
 });
-
-
-
+Route::resource('/member',MembersController::class);
 

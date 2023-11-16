@@ -18,6 +18,7 @@ class Profiles
     {
         $newProfile = explode('|', $profiles);
 
+
         $profileName = strtolower($request->user()->profile->label);
 
         if(!in_array($profileName,$newProfile))
