@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AdminsController;
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 
@@ -29,7 +28,7 @@ Route::resource('/admin', AdminsController::class);
 
 
 Route::middleware(['admin'])->group(function () {
-    Route::get('admin', AdminsController::class);
+    Route::resource('/admin', AdminsController::class);
     #Route::get('member', MembersController::class);
     #Route::get('disciplines', DisciplineController::class);
 
@@ -37,12 +36,14 @@ Route::middleware(['admin'])->group(function () {
 });
 
 Route::middleware(['coach'])->group(function () {
-    Route::get('Disciplines', AdminsController::class);
+    #Route::get('Disciplines', AdminsController::class);
     #Route::get('member', [MembersController::class, 'index']);
     #Route::get('disciplines', DisciplineController::class);
 
     // Puedes agregar más rutas que requieran el mismo middleware aquí
 });
+
+Route::resource('Member', 'MemberController');
 
 
 

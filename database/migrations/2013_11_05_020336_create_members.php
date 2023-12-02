@@ -15,13 +15,13 @@ class members extends Migration
     {
         Schema::create('members', function(Blueprint $table){
 
-            $table->id('member_id');
+            $table->id('id_Miembro');
             $table->unsignedBigInteger('id_profile');
-            $table->string("member_name");
-            $table->string("member_lastname");
-            $table->string("member_email")->unique();
-            $table->string("member_phone");
-            $table->string("member_state");
+            $table->string("nombre_Miembro");
+            $table->string("apellido_Miembro");
+            $table->string("correo_Miembro")->unique();
+            $table->string("telefono_Miembro");
+            $table->string("estadoMembresia_Miembro");
             $table->string("member_user")->unique();
             $table->string("member_password");
             $table->timestamps();

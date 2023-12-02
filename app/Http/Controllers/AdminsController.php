@@ -10,7 +10,8 @@ class AdminsController extends Controller
     
     public function index()
     {
-        //retorno de vista
+        $admins = Admin::all();
+        return view('admin');
     }
 
     

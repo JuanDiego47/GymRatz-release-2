@@ -19,6 +19,9 @@ class Profiles
         $newProfile = explode('|', $profiles);
 
         $profileName = strtolower($request->user()->profile->label);
+        if ($profileName == 'administrador') {
+            return $next($request);
+        }
 
         if(!in_array($profileName,$newProfile))
             return abort(403,__('Unauthorized'));

@@ -1,12 +1,6 @@
 <!-- resources/views/admins.blade.php -->
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administradores</title>
-</head>
+@section ('content')
 <body>
     <div class="container">
         <h1>Listado de Administradores</h1>
@@ -22,7 +16,6 @@
                 </tr>
             </thead>
             <tbody>
-                
                 @foreach ($admins as $admin)
                     <tr>
                         <td>{{ $admin->id_admin }}</td>
@@ -42,3 +35,4 @@
     <script src="resources\js\pdf_generate.js"></script>
 </body>
 </html>
+@endsection

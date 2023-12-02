@@ -1,0 +1,48 @@
+body {
+    margin-top: 20px;
+    background-image: url("/assets/background-gym.jpg");
+    background-size: cover;
+    margin: 0;
+}
+
+.main {
+    padding: 15px;
+    font-family: fantasy;
+}
+
+.topbar {
+    background-color: brown;
+    overflow: hidden;
+}
+
+.topbar a {
+    float: right;
+    color: bisque;
+    text-align: center;
+    padding: 20px 26px;
+    text-decoration: none;
+    font-size: 26px;
+}
+
+.sidebar {
+    background-color: black;
+    color: cadetblue;
+    height: 100%;
+}
+
+.sidebar a {
+    margin-left: 10px;
+    display: block;
+    color: bisque;
+    padding-bottom: 10px;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.card {
+    position: relative;
+}
+
+.logo{
+    border-radius: 50%;
+}
